@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+  <Description about="urn:mozilla:install-manifest">
+    <em:id>BitTorrent_WebUI_2@firefox.alexisbrunet.com</em:id>
+    <em:type>2</em:type>
+    <em:name>BitTorrent WebUI+</em:name>
+    <em:version>0.2.3.0</em:version>
+    <em:creator>Alexis Brunet</em:creator>
+    <em:contributor>Grant Brunton</em:contributor>
+    <em:description>Automatically upload .torrent files to your favorite BitTorrent client's Web Interface.</em:description>
+    <!--em:description>This Firefox extension allows you to simply click a download link for a torrent file and have it automatically uploaded to your Bit Torrent client through your preferred web interface. This is especially useful if you do a lot of browsing on a different computer than the one which is running your Bit Torrent client.
+
+Supported Clients:
+* Vuze and Azureus are supported through the following Remote Control plugins
+  - AzSMRC
+  - HTML WebUI
+  - Swing WebUI
+* uTorrent
+* Deluge
+* ruTorrent webui for rTorrent
+* Transmission BT
+* qBittorent
+
+Important Notes:
+* Be aware this addon is for use with WebUI interfaces and does not work with uTorrent Remote.
+* uTorrent 3.0 still supports enabling classic WebUI interfaces through the options.
+* Deluge magnet support requires Deluge 1.3.5 or greater.
+* ruTorrent and deluge installations can be configured with the path option. Be aware that the path is case sensitive.
+* Make sure you are running the latest version to get all the supported features. If the version has not been reviewed by Mozilla you may be required to manually update to that version using the links below.
+* Thanks go to http://www.kphservices.com for the free seedbox they donated for client testing.
+* Email bug reports and feature requests to bunta@orcon.net.nz instead of adding a review but make sure you are using the latest version first.
+
+This version is an update on the author developed version available here:
+https://addons.mozilla.org/en-US/firefox/addon/7715
+
+Updates:
+0.2.3.0
+
+    * Added support for qBittorrent
+      (Note qBT webui does not have a proper torrent add response so add reply will always show successful)
+
+0.2.2.5
+
+    * Fixed magnet links after relocating preferences in previous version
+
+0.2.2.4
+
+    * Added ability to specify unique path locations for webui servers
+    * Relocated preference settings to correct extensions branch
+
+0.2.2.3
+
+    * Fixed bug in magnet handler
+    * Fixed Add Torrent success check for ruTorrent
+
+0.2.2.2
+
+    * Added ruTorrent support including magnet links
+      (ruTorrent dispatcher provided by Anton Baranau)
+
+0.2.2.1
+
+    * Added Transmission BT support
+    * Added magnet link support for Transmission BT clients
+
+0.2.1.7
+
+    * Added magnet link support for Deluge. (Requires Deluge 1.3.5 or greater)
+
+0.2.1.6
+
+    * Added support for magnet links for Utorrent and Vuze/Azureus HTML plugin
+    * Fixed missing alert icons
+
+0.2.1.5
+
+    * Added sound effect when adding torrents (optional setting)
+    * Preparation for support of magnet links
+    * Improved debug handling
+    * Minor bug fixes
+
+0.2.1.4
+
+    * Toolbar icon added for Firefox 4+ compatibility
+    * Statusbar icon can be disabled via addon preferences to use customisable toolbar icon instead
+
+0.2.1.3
+
+    * Updated for Firefox 4+ compatibility
+    * Fixed some minor bugs
+
+0.2.1.2
+
+    * Added feature to open WebUI GUI page by middle click of taskbar icon.</em:description-->
+    <em:optionsURL>chrome://bittorrent_webui/content/options.xul</em:optionsURL>
+    <em:iconURL>chrome://bittorrent_webui/content/images/bittorrent_32.png</em:iconURL>
+    <em:homepageURL>https://addons.mozilla.org/en-US/firefox/addon/bittorrent-webui-120685/</em:homepageURL>
+    <em:targetApplication>
+      <Description>
+        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id> <!-- Firefox -->
+        <em:minVersion>2.0</em:minVersion>
+        <em:maxVersion>20.*</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+  </Description>
+</RDF>

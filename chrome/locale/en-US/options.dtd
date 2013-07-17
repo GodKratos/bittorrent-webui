@@ -1,0 +1,15 @@
+<!ENTITY window.title "BitTorrent WebUI Options">
+<!ENTITY serverAddress.label "Server Address">
+<!ENTITY serverPort.label "Port">
+<!ENTITY serverUsername.label "Username">
+<!ENTITY serverPassword.label "Password">
+<!ENTITY bitTorrentClient.label "BitTorrent Client">
+<!ENTITY contextMenuEntry.label "Send Link to BitTorrent WebUI">
+<!ENTITY webuiTab.label "WebUI">
+<!ENTITY advancedTab.label "Advanced">
+<!ENTITY showStatusIcon.label "Show status bar icon">
+<!ENTITY beepEnableBTWebUI.label "Enable sound when adding torrents">
+<!ENTITY enableBTWebUI.label "Enable BitTorrent WebUI">
+<!ENTITY disableBTWebUI.label "Disable BitTorrent WebUI">
+<!ENTITY openWebUI.label "Open WebUI">
+<!ENTITY openBTWebUIPrefs.label "Open BitTorrent WebUI Preferences">

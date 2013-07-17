@@ -1,0 +1,73 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://bittorrent_webui/content/button.css" type="text/css"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://bittorrent_webui/locale/options.dtd">
+
+<overlay id="BTWebUI_Overlay" 
+	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" 
+	xmlns:nc="http://home.netscape.com/NC-rdf#">
+	
+	<script type="application/x-javascript" src="chrome://bittorrent_webui/content/namespace.js"/>
+	
+	<!-- Utilities and Preferences -->
+	<script type="application/x-javascript" src="chrome://bittorrent_webui/content/prefs.js"/>
+	<script type="application/x-javascript" src="chrome://bittorrent_webui/content/utilities.js"/>
+	<script type="application/x-javascript" src="chrome://bittorrent_webui/content/PasswordManager.js"/>
+	<script type="application/x-javascript" src="chrome://bittorrent_webui/content/json.js"/>	
+	<script type="application/x-javascript" src="chrome://bittorrent_webui/content/bencode.js"/>
+	
+	<!-- Dispatchers (base class first!) -->
+	<script type="application/x-javascript" src="chrome://bittorrent_webui/content/dispatcher.js"/>
+	<script type="application/x-javascript" src="chrome://bittorrent_webui/content/AzureusHTMLDispatcher.js"/>
+	<script type="application/x-javascript" src="chrome://bittorrent_webui/content/AzSMRCDispatcher.js"/>
+	<script type="application/x-javascript" src="chrome://bittorrent_webui/content/AzureusSwingUIDispatcher.js"/>
+	<script type="application/x-javascript" src="chrome://bittorrent_webui/content/TransmissionDispatcher.js"/>
+	<script type="application/x-javascript" src="chrome://bittorrent_webui/content/uTorrentDispatcher.js"/>
+	<script type="application/x-javascript" src="chrome://bittorrent_webui/content/ruTorrentDispatcher.js"/>
+	<script type="application/x-javascript" src="chrome://bittorrent_webui/content/DelugeDispatcher.js"/>
+	<script type="application/x-javascript" src="chrome://bittorrent_webui/content/qBittorrentDispatcher.js"/>
+	
+	<!-- Main extension code -->	
+	<script type="application/x-javascript" src="chrome://bittorrent_webui/content/main.js"/>	
+	
+	<!-- Context Menu Overlay -->
+	<script type="application/x-javascript" src="chrome://bittorrent_webui/content/BTWebUI_Chrome.js"/>
+		<popup id="contentAreaContextMenu">
+		<menuitem 
+			id="addTorrentByURL"
+			label="&contextMenuEntry.label;"
+			insertbefore="context-sep-copylink"
+			oncommand="alexisbrunet.com.BTWebUI_Chrome.sendURL();"
+			class="menuitem-iconic"
+			hidden="true"
+			image="chrome://bittorrent_webui/content/images/bittorrent_16.png" />
+	</popup>
+	
+	<!-- Status Bar Icon -->
+	<statusbar id="status-bar">
+		<statusbarpanel id="btWebUIStatusBar" context="btWebUIStatusContextMenu" hidden="true" onmousedown="alexisbrunet.com.BTWebUI_Chrome.onClickStatusIcon(event);">
+			<image id="btWebUIStatusIcon" src="chrome://bittorrent_webui/content/images/bittorrent_16.png"/>
+		</statusbarpanel>
+	</statusbar>
+
+	<!-- Toolbar Button -->
+	<toolbarpalette id="BrowserToolbarPalette">
+		<toolbarbutton id="btWebUIButton"
+			label="BitTorrent WebUI"
+			tooltiptext="BitTorrent WebUI"
+			status="1"
+			onclick="alexisbrunet.com.BTWebUI_Chrome.onClickStatusIcon(event)"
+			context="btWebUIStatusContextMenu"
+			class="toolbarbutton-1 chromeclass-toolbar-additional"
+		/>
+	</toolbarpalette>
+
+	<popupset>
+		<menupopup id="btWebUIStatusContextMenu" onpopupshowing="alexisbrunet.com.BTWebUI_Chrome.onStatusBarMenuShowing(this)">
+			<menuitem label="&enableBTWebUI.label;" type="checkbox" id="btWebUIEnabled" oncommand="alexisbrunet.com.BTWebUI_Chrome.toggleEnabledFlag();"/>
+			<menuitem label="&openWebUI.label;" oncommand="alexisbrunet.com.BitTorrentWebUI.Util.openWebUI();"/>
+			<menuitem label="&openBTWebUIPrefs.label;" oncommand="alexisbrunet.com.BitTorrentWebUI.Prefs.showOptionsDialog();"/>
+		</menupopup>
+	</popupset>
+	
+</overlay>

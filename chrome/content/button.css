@@ -1,0 +1,9 @@
+#btWebUIButton
+  {list-style-image: url("chrome://bittorrent_webui/content/images/bittorrent_16.png");}
+
+#btWebUIButton[status="1"]
+  {list-style-image: url("chrome://bittorrent_webui/content/images/bittorrent_16.png");}
+
+#btWebUIButton[status="0"]
+  {list-style-image: url("chrome://bittorrent_webui/content/images/bittorrent_disabled_16.png");}
+

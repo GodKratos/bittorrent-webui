@@ -1,0 +1,15 @@
+﻿<!ENTITY window.title "Насторйки BitTorrent WebUI">
+<!ENTITY serverAddress.label "Адрес сервера:">
+<!ENTITY serverPort.label "Порт:">
+<!ENTITY serverUsername.label "Имя пользователя:">
+<!ENTITY serverPassword.label "Пароль:">
+<!ENTITY bitTorrentClient.label "BitTorrent-клиент:">
+<!ENTITY contextMenuEntry.label "Передать ссылку в BitTorrent-клиент">
+<!ENTITY webuiTab.label "Web-интерфейс">
+<!ENTITY advancedTab.label "Дополнительно">
+<!ENTITY showStatusIcon.label "Показывать иконку в строке состояния">
+<!ENTITY beepEnableBTWebUI.label "Включить звук при добавлении torrents">
+<!ENTITY enableBTWebUI.label "Включить Web-интерфейс BitTorrent">
+<!ENTITY disableBTWebUI.label "Отключить Web-интерфейс BitTorrent">
+<!ENTITY openWebUI.label "Показать Web-интерфейс">
+<!ENTITY openBTWebUIPrefs.label "Насторйки BitTorrent WebUI">

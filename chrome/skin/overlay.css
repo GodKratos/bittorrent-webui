@@ -1,0 +1,22 @@
+/* This is just an example.  You shouldn't do this. */
+#bittorrent_webui-hello
+{
+  color: red ! important;
+}
+#bittorrent_webui-toolbar-button
+{
+  list-style-image: url("chrome://btwebui/skin/toolbar-button.png");
+  -moz-image-region: rect(0px 24px 24px 0px);
+}
+#bittorrent_webui-toolbar-button:hover
+{
+  -moz-image-region: rect(24px 24px 48px  0px);
+}
+[iconsize="small"] #btwebui-toolbar-button
+{
+  -moz-image-region: rect( 0px 40px 16px 24px);
+}
+[iconsize="small"] #btwebui-toolbar-button:hover
+{
+  -moz-image-region: rect(24px 40px 40px 24px);
+}
