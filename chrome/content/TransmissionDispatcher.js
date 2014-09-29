@@ -50,6 +50,11 @@ function TransmissionDispatcher() {
 					this.mMessage = torrentInfo["name"] + " " +
 						Util.getStrBundle().GetStringFromName("successMessageWithFilename");
 				}
+				var torrentInfo = response.arguments["torrent-duplicate"];
+				if( torrentInfo ) {
+					this.mSuccess = false;
+					this.mMessage = Util.getStrBundle().GetStringFromName("duplicateTorrent");
+				}
 			} else {
 				this.mMessage = response.result;
 			}
