@@ -101,9 +101,16 @@ Updates:
     <em:homepageURL>https://addons.mozilla.org/en-US/firefox/addon/bittorrent-webui-120685/</em:homepageURL>
     <em:targetApplication>
       <Description>
+        <!-- Firefox -->
         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id> <!-- Firefox -->
         <em:minVersion>2.0</em:minVersion>
         <em:maxVersion>20.*</em:maxVersion>
+      </Description>
+      <Description>
+        <!-- SeaMonkey -->
+        <em:id>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</em:id>
+        <em:minVersion>2.0</em:minVersion>
+        <em:maxVersion>2.*</em:maxVersion>
       </Description>
     </em:targetApplication>
   </Description>

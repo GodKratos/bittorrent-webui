@@ -7,4 +7,4 @@ locale    bittorrent_webui   it-IT         chrome/locale/it-IT/
 locale    bittorrent_webui   es-ES         chrome/locale/es-ES/
 locale    bittorrent_webui   ru-RU         chrome/locale/ru-RU/
 overlay   chrome://browser/content/browser.xul   chrome://bittorrent_webui/content/btwebuiOverlay.xul
-
+overlay   chrome://navigator/content/navigator.xul   chrome://bittorrent_webui/content/btwebuiOverlay.xul
