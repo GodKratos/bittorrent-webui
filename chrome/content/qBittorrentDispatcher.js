@@ -13,7 +13,14 @@ function qBittorrentDispatcher() {
 	this.name = "qBittorrent";
 	this.httpRealm = "qBittorrent";
 
+  const AUTH_RPC_ERROR = 0;
+  const AUTH_RPC_AVAILABLE = 1;
+  const AUTH_RPC_UNAVAILABLE = 2;
+
+  this.sessionID = null;
+
 	this.createHTTPPost = function() {
+    var sessionIdResult = getSessionID();
 		this.writeBinary(
 			"--" + MULTIPART_BOUNDARY + "\r\n" +
 			"Content-Disposition: form-data; name=\"Filename\"\r\n" +
@@ -38,6 +45,14 @@ function qBittorrentDispatcher() {
 		this.mPostURI = "/command/upload";
 
 	};
+
+  this.setRequestHeader = function() {
+    this.mRequest.setRequestHeader("Content-Type",
+        "multipart/form-data; boundary=" + MULTIPART_BOUNDARY );
+    if(this.sessionID) {
+      this.mRequest.setRequestHeader("Cookie", this.sessionID);
+    }
+  }
 
 	this.getResultParser = function() {
 		var resultParser = this.getResultParserBase();
@@ -77,14 +92,49 @@ function qBittorrentDispatcher() {
 		this.mPostURI = "/command/download";
 
 		this.createHTTPPost = function() {
+      var sessionIdResult = getSessionID();
+
 			this.writeBinary("urls=" + encodeURIComponent( this._url ));
 		};
 
 		this.setRequestHeader = function() {
 			this.mRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded" );
+      if(this.sessionID) {
+        this.mRequest.setRequestHeader("Cookie", this.sessionID);
+      }
 		};
 	};
 
+  var self = this;
+	function getSessionID() {
+		var request = new XMLHttpRequest();
+		request.open( "POST", self.getWebUIAddress() + "/login", false, null, null );
+    request.setRequestHeader(
+        'Content-Type',
+        'application/x-www-form-urlencoded; charset=utf-8');
+
+		try {
+			request.send(
+          'username=' + Prefs.getWebUIUsername() +
+          '&password=' + Prefs.getWebUIPassword()
+			);
+
+			if( request.status == 200 ) {
+				var response = Util.JSON.parse(request.responseText);
+				if(response.result) {
+					var cookie = request.getResponseHeader("Set-Cookie");
+					cookie = cookie.split(";", 1)[0];
+					Util.debug("Using Cookie: " + cookie);
+					self.sessionID = cookie;
+				}
+				return AUTH_RPC_AVAILABLE;
+			} else {
+				return AUTH_RPC_UNAVAILABLE;
+			}
+		} catch(e) {}
+		return AUTH_RPC_ERROR;
+	}
 
 });
+
 })();
