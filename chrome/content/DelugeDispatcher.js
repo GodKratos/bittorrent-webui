@@ -148,7 +148,7 @@ function DelugeDispatcher() {
 					cookie = cookie.split(";", 1)[0];
 					Util.debug("Using Cookie: " + cookie);
 					self.sessionID = cookie;
-				}grep
+				}
 				return JSON_RPC_AVAILABLE;
 			} else if(request.status == 404) {
 				return JSON_RPC_UNAVAILABLE;
