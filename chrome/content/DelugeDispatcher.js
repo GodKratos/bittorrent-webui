@@ -132,6 +132,7 @@ function DelugeDispatcher() {
 		request.open( "POST", self.getWebUIAddress() + "/json", false, null, null );
 
 		try {
+			request.setRequestHeader("Content-Type", "application/json");
 			request.send(
 				Util.JSON.stringify({
 					id : 1,
@@ -147,7 +148,7 @@ function DelugeDispatcher() {
 					cookie = cookie.split(";", 1)[0];
 					Util.debug("Using Cookie: " + cookie);
 					self.sessionID = cookie;
-				}
+				}grep
 				return JSON_RPC_AVAILABLE;
 			} else if(request.status == 404) {
 				return JSON_RPC_UNAVAILABLE;
