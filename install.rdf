@@ -39,6 +39,7 @@ Updates:
     * Fixed return message for duplicate torrents with transmission client
 	* Added support for seamonkey
 	* Fixed Deluge dispatcher to work with latest versions
+	* Add authentication to qBittorrent dispatcher
 
 0.2.3.0
 

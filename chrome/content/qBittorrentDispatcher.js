@@ -39,6 +39,15 @@ function qBittorrentDispatcher() {
 
 	};
 
+	this.setRequestHeader = function() {
+		var sessionID = getSessionID();
+		if(sessionID != null) {
+			Util.debug("Using session id: " + sessionID);
+			this.mRequest.setRequestHeader("Cookie", this.sessionID);
+		}
+		this.mRequest.setRequestHeader("Connection", "close");
+	};
+
 	this.getResultParser = function() {
 		var resultParser = this.getResultParserBase();
 
@@ -79,12 +88,29 @@ function qBittorrentDispatcher() {
 		this.createHTTPPost = function() {
 			this.writeBinary("urls=" + encodeURIComponent( this._url ));
 		};
-
-		this.setRequestHeader = function() {
-			this.mRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded" );
-		};
 	};
 
+	function getSessionID() {
+		var request = new XMLHttpRequest();
+		request.open( "POST", self.getWebUIAddress() + "/login", false, null, null );
+		request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+		try {
+			request.send( "username="+Prefs.getWebUIUsername()+"&password="+Prefs.getWebUIPassword() );
+
+			if( request.status == 200 ) {
+				var response = Util.JSON.parse(request.responseText);
+				if(response.result == "Ok.") {
+					return request.getResponseHeader("Set-Cookie");
+				} else {
+					Util.debug("Auth response: " + response.result);
+				}
+			} else {
+				Util.debug("Auth status: " + request.status);
+			}
+		} catch(e) {}
+		return null;
+	}
 
 });
 })();
