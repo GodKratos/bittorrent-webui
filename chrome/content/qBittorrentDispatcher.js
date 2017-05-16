@@ -88,6 +88,10 @@ function qBittorrentDispatcher() {
 		this.createHTTPPost = function() {
 			this.writeBinary("urls=" + encodeURIComponent( this._url ));
 		};
+
+		this.setRequestHeader = function() {
+			this.mRequest.setRequestHeader("Content-Type", "application/x-www-form-urlencoded" );
+		};
 	};
 
 	function getSessionID() {
