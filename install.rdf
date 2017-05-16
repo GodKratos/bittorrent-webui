@@ -37,6 +37,8 @@ Updates:
 0.2.3.1
 
     * Fixed return message for duplicate torrents with transmission client
+	* Added support for seamonkey
+	* Fixed Deluge dispatcher to work with latest versions
 
 0.2.3.0
 

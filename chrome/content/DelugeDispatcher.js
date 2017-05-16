@@ -51,6 +51,7 @@ function DelugeDispatcher() {
 	};
 
 	this.setRequestHeader = function() {
+		this.mRequest.setRequestHeader("Content-type", "application/json");
 		if(this.sessionID) {
 			this.mRequest.setRequestHeader("Cookie", this.sessionID);
 		}
