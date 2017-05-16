@@ -4,7 +4,7 @@
     <em:id>BitTorrent_WebUI_2@firefox.alexisbrunet.com</em:id>
     <em:type>2</em:type>
     <em:name>BitTorrent WebUI+</em:name>
-    <em:version>0.2.3.0</em:version>
+    <em:version>0.2.3.1</em:version>
     <em:creator>Alexis Brunet</em:creator>
     <em:contributor>Grant Brunton</em:contributor>
     <em:description>Automatically upload .torrent files to your favorite BitTorrent client's Web Interface.</em:description>
