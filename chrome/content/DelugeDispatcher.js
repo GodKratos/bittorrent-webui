@@ -133,6 +133,7 @@ function DelugeDispatcher() {
 		request.open( "POST", self.getWebUIAddress() + "/json", false, null, null );
 
 		try {
+			request.setRequestHeader("Content-Type", "application/json");
 			request.send(
 				Util.JSON.stringify({
 					id : 1,
@@ -177,7 +178,8 @@ function DelugeDispatcher() {
 
 		this.setRequestHeader = function() {
 			this.mRequest.setRequestHeader("Connection", "close");
-			this.mRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+//			this.mRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			this.mRequest.setRequestHeader("Content-type", "application/json");
 		};
 
 		this.getResultParser = function() {
