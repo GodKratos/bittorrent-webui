@@ -131,6 +131,7 @@ function DelugeDispatcher() {
 	function getSessionID() {
 		var request = new XMLHttpRequest();
 		request.open( "POST", self.getWebUIAddress() + "/json", false, null, null );
+		request.setRequestHeader("Content-type", "application/json");
 
 		try {
 			request.send(
